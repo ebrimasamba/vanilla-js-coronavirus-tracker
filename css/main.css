@@ -1,0 +1,132 @@
+html {
+  --cases: #3755ec;
+  --recover: #30db41;
+  --death: #f13232;
+  --dark-blue: #020207;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-position: center;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 2, 14, 0.9), rgba(0, 2, 14, 0.9)),
+    url(../img/jake-weirick-Q_RBVFFXR_g-unsplash.jpg);
+  color: ghostwhite;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 48px 51px 0;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: var(--cases);
+}
+.covid-container {
+  max-width: 886px;
+  /* border: solid 1px black; */
+  position: relative;
+  margin: auto;
+  margin-top: 77px;
+  padding: 53px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: rgba(2, 2, 7, 0.4);
+  color: whitesmoke;
+}
+
+.covid-container span {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+}
+
+.border-green {
+  top: 0;
+  right: 0;
+  border: solid 1px var(--recover);
+  border-left: none;
+  border-bottom: none;
+}
+
+.border-blue {
+  bottom: 0;
+  left: 0;
+  border: solid 1px var(--cases);
+  border-right: none;
+  border-top: none;
+}
+.covid-container h1 {
+  font-size: 44px;
+}
+
+.numbers-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 42px;
+}
+
+.numbers-container div {
+  margin: 0px 20px;
+}
+.numbers-container div h2 {
+  font-size: 17px;
+}
+
+.numbers-container div p {
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.cases {
+  color: var(--cases);
+}
+.recoveries {
+  color: var(--recover);
+}
+
+.deaths {
+  color: var(--death);
+}
+
+.mac {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+table {
+  width: 886px;
+  margin: auto;
+  background-color: rgba(2, 2, 7, 0.4);
+  margin-bottom: 100px;
+}
+
+th {
+  background-color: rgba(15, 15, 60, 0.4);
+  font-size: 17px;
+  font-weight: 600;
+  text-align: left;
+  padding: 10px;
+}
+
+td {
+  padding: 10px;
+}
