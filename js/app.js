@@ -5,6 +5,12 @@ const deaths = document.querySelector("#deaths");
 const tbody = document.querySelector("tbody");
 const date = document.querySelector("#date");
 const counter = document.querySelector(".counter");
+const gambiaCases = document.querySelector("#gambia-cases");
+const gambiaRecoveries = document.querySelector("#gambia-recoveries");
+const gambiaDeaths = document.querySelector("#gambia-deaths");
+const senegalCases = document.querySelector("#senegal-cases");
+const senegalRecoveries = document.querySelector("#senegal-recoveries");
+const senegalDeaths = document.querySelector("#senegal-deaths");
 
 const coronaWWW = async () => {
   let response = await fetch(worldwideApi);
@@ -12,7 +18,7 @@ const coronaWWW = async () => {
   // let TotalDeaths = data.Global.TotalDeaths;
   // let TotalRecovered = data.Global.TotalRecovered;
   // let casesCount = 0;
-  // console.log(TotalConfirmed);
+  console.log(data.Countries);
 
   cases.textContent = 0;
   deaths.textContent = 0;
@@ -55,28 +61,43 @@ const coronaWWW = async () => {
       deaths.textContent = new Intl.NumberFormat().format(TotalDeaths);
     }
   };
+
+  const gambia = (element) => {
+    if (element.CountryCode == "GM") {
+      gambiaCases.textContent = element.TotalConfirmed;
+      gambiaRecoveries.textContent = element.TotalRecovered;
+      gambiaDeaths.textContent = element.TotalDeaths;
+      console.log("Gambia");
+    }
+  };
+
+  const senegal = (element) => {
+    if (element.CountryCode == "SN") {
+      senegalCases.textContent = element.TotalConfirmed;
+      senegalRecoveries.textContent = element.TotalRecovered;
+      senegalDeaths.textContent = element.TotalDeaths;
+      console.log("Senegal");
+    }
+  };
+
   updateCases();
   updateRecoveries();
   updateDeaths();
-  // cases.textContent = new Intl.NumberFormat().format(
-  //   data.Global.TotalConfirmed
-  // );
-
-  // deaths.textContent = new Intl.NumberFormat().format(data.Global.TotalDeaths);
-  // recoveries.textContent = new Intl.NumberFormat().format(
-  //   data.Global.TotalRecovered
-  // );
 
   data.Countries.forEach((element) => {
-    if (element.TotalDeaths > 1000) {
-      tbody.innerHTML += `<tr>
-    <td>${element.Country}</td>
-    <td>${new Intl.NumberFormat().format(element.TotalConfirmed)}</td>
-    <td>${new Intl.NumberFormat().format(element.TotalRecovered)}</td>
-    <td>${new Intl.NumberFormat().format(element.TotalDeaths)}</td>
-  </tr>`;
-    }
+    gambia(element);
+    senegal(element);
   });
+  // data.Countries.forEach((element) => {
+  //   if (element.TotalDeaths > 1000) {
+  //     tbody.innerHTML += `<tr>
+  //   <td>${element.Country}</td>
+  //   <td>${new Intl.NumberFormat().format(element.TotalConfirmed)}</td>
+  //   <td>${new Intl.NumberFormat().format(element.TotalRecovered)}</td>
+  //   <td>${new Intl.NumberFormat().format(element.TotalDeaths)}</td>
+  // </tr>`;
+  //   }
+  // });
 };
 
 coronaWWW();

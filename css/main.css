@@ -57,8 +57,8 @@ header {
 
 .covid-container span {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
 }
 
 .border-green {
@@ -139,6 +139,74 @@ td {
   padding: 10px;
 }
 
+.negate-margin {
+  margin: 0 -10px;
+}
+.countries-container {
+  width: 70%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.border-green-small {
+  top: 0;
+  left: 0;
+  border: solid 1px var(--recover);
+  border-right: none;
+  border-bottom: none;
+}
+
+.border-blue-small {
+  bottom: 0;
+  right: 0;
+  border: solid 1px var(--cases);
+  border-left: none;
+  border-top: none;
+}
+
+.countries-container span {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+}
+.gambia {
+  width: 50%;
+  position: relative;
+  background-color: rgba(2, 2, 7, 0.4);
+  margin: 0px 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.gambia h5 {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.numbers-container-small {
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
+}
+
+.numbers-container-small div {
+  margin: 0px 20px;
+  text-transform: uppercase;
+}
+
+.numbers-container-small h6 {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.numbers-container-small p {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+/* --------------------Media Queries---------------------------- */
 @media only screen and (max-width: 942px) {
   body {
     padding: 0px 30px;
@@ -162,17 +230,38 @@ td {
     margin-top: 17px;
   }
 
-  .table-container {
+  /* .table-container {
     width: 100%;
-    over
+  } */
+  .countries-container {
+    width: 100%;
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .negate-margin {
+    padding: 0px 10px;
+  }
+  .countries-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .gambia {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
 @media only screen and (max-width: 500px) {
   body {
     padding: 0px 15px;
   }
   .navbar-brand {
     font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 396px) {
+  .covid-container h1 {
+    font-size: 28px;
   }
 }
