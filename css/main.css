@@ -26,6 +26,7 @@ body {
   background-image: linear-gradient(rgba(0, 2, 14, 0.9), rgba(0, 2, 14, 0.9)),
     url(../img/jake-weirick-Q_RBVFFXR_g-unsplash.jpg);
   color: ghostwhite;
+  overflow-x: hidden;
 }
 header {
   display: flex;
@@ -114,11 +115,16 @@ header {
   text-align: center;
 }
 
-table {
+.table-container {
   width: 70%;
   margin: auto;
+  overflow-x: auto;
+}
+table {
+  width: 100%;
   background-color: rgba(2, 2, 7, 0.4);
   margin-bottom: 100px;
+  overflow-x: auto;
 }
 
 th {
@@ -150,12 +156,23 @@ td {
   .numbers-container {
     margin-top: 26px;
     flex-direction: column;
+    align-items: center;
   }
   .numbers-container div h2 {
     margin-top: 17px;
   }
-  table {
+
+  .table-container {
     width: 100%;
-    overflow: auto;
+    over
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    padding: 0px 15px;
+  }
+  .navbar-brand {
+    font-size: 16px;
   }
 }
