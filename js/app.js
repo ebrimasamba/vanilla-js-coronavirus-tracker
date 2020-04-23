@@ -3,7 +3,7 @@ const cases = document.querySelector("#cases");
 const recoveries = document.querySelector("#recoveries");
 const deaths = document.querySelector("#deaths");
 const tbody = document.querySelector("tbody");
-const date = document.querySelector("#data");
+const date = document.querySelector("#date");
 const counter = document.querySelector(".counter");
 
 const coronaWWW = async () => {
@@ -81,4 +81,26 @@ const coronaWWW = async () => {
 
 coronaWWW();
 let theDate = new Date();
-console.log(theDate.getUTCDate(), theDate.toString());
+let days = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Friday", "Sat"];
+let months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+console.log(
+  `${theDate.getUTCDate()},${days[theDate.getUTCDay()]} ${
+    months[theDate.getUTCMonth()]
+  }`
+);
+date.textContent = `${days[theDate.getUTCDay()]}, ${theDate.getUTCDate()} ${
+  months[theDate.getUTCMonth()]
+}`;
