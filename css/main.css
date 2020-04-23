@@ -206,6 +206,13 @@ td {
   font-weight: 500;
 }
 
+cite {
+  text-align: center;
+  display: block;
+  font-weight: 100;
+  opacity: 0.2;
+  margin: 10px;
+}
 /* --------------------Media Queries---------------------------- */
 @media only screen and (max-width: 942px) {
   body {
