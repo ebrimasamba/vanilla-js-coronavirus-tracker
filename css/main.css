@@ -31,6 +31,7 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 48px 51px 0;
+  background-attachment: fixed;
 }
 
 .navbar-brand {
@@ -40,7 +41,8 @@ header {
   color: var(--cases);
 }
 .covid-container {
-  max-width: 886px;
+  width: 70%;
+  /* min-width: 400px; */
   /* border: solid 1px black; */
   position: relative;
   margin: auto;
@@ -113,7 +115,7 @@ header {
 }
 
 table {
-  width: 886px;
+  width: 70%;
   margin: auto;
   background-color: rgba(2, 2, 7, 0.4);
   margin-bottom: 100px;
@@ -129,4 +131,31 @@ th {
 
 td {
   padding: 10px;
+}
+
+@media only screen and (max-width: 942px) {
+  body {
+    padding: 0px 30px;
+  }
+
+  header {
+    padding: 38px 0px 0;
+  }
+  .covid-container {
+    width: 100%;
+  }
+  .covid-container h1 {
+    font-size: 34px;
+  }
+  .numbers-container {
+    margin-top: 26px;
+    flex-direction: column;
+  }
+  .numbers-container div h2 {
+    margin-top: 17px;
+  }
+  table {
+    width: 100%;
+    overflow: auto;
+  }
 }

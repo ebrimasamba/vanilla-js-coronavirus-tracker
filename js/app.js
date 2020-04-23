@@ -80,3 +80,5 @@ const coronaWWW = async () => {
 };
 
 coronaWWW();
+let theDate = new Date();
+console.log(theDate.getUTCDate(), theDate.toString());
