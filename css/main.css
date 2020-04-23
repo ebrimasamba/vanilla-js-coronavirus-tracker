@@ -43,8 +43,6 @@ header {
 }
 .covid-container {
   width: 70%;
-  /* min-width: 400px; */
-  /* border: solid 1px black; */
   position: relative;
   margin: auto;
   margin-top: 77px;
@@ -107,36 +105,6 @@ header {
 
 .deaths {
   color: var(--death);
-}
-
-.mac {
-  margin-top: 30px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.table-container {
-  width: 70%;
-  margin: auto;
-  overflow-x: auto;
-}
-table {
-  width: 100%;
-  background-color: rgba(2, 2, 7, 0.4);
-  margin-bottom: 100px;
-  overflow-x: auto;
-}
-
-th {
-  background-color: rgba(15, 15, 60, 0.4);
-  font-size: 17px;
-  font-weight: 600;
-  text-align: left;
-  padding: 10px;
-}
-
-td {
-  padding: 10px;
 }
 
 .negate-margin {
@@ -211,7 +179,7 @@ cite {
   display: block;
   font-weight: 100;
   opacity: 0.2;
-  margin: 10px;
+  margin: 10px 0 20px;
 }
 /* --------------------Media Queries---------------------------- */
 @media only screen and (max-width: 942px) {
@@ -237,9 +205,6 @@ cite {
     margin-top: 17px;
   }
 
-  /* .table-container {
-    width: 100%;
-  } */
   .countries-container {
     width: 100%;
   }

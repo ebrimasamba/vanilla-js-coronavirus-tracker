@@ -13,13 +13,8 @@ const senegalRecoveries = document.querySelector("#senegal-recoveries");
 const senegalDeaths = document.querySelector("#senegal-deaths");
 
 const coronaWWW = async () => {
-  let response = await fetch(worldwideApi);
-  var data = await response.json();
-  // let TotalDeaths = data.Global.TotalDeaths;
-  // let TotalRecovered = data.Global.TotalRecovered;
-  // let casesCount = 0;
-  console.log(data.Countries);
-
+  const response = await fetch(worldwideApi);
+  const data = await response.json();
   cases.textContent = 0;
   deaths.textContent = 0;
   recoveries.textContent = 0;
@@ -67,7 +62,6 @@ const coronaWWW = async () => {
       gambiaCases.textContent = element.TotalConfirmed;
       gambiaRecoveries.textContent = element.TotalRecovered;
       gambiaDeaths.textContent = element.TotalDeaths;
-      console.log("Gambia");
     }
   };
 
@@ -76,7 +70,6 @@ const coronaWWW = async () => {
       senegalCases.textContent = element.TotalConfirmed;
       senegalRecoveries.textContent = element.TotalRecovered;
       senegalDeaths.textContent = element.TotalDeaths;
-      console.log("Senegal");
     }
   };
 
@@ -88,21 +81,11 @@ const coronaWWW = async () => {
     gambia(element);
     senegal(element);
   });
-  // data.Countries.forEach((element) => {
-  //   if (element.TotalDeaths > 1000) {
-  //     tbody.innerHTML += `<tr>
-  //   <td>${element.Country}</td>
-  //   <td>${new Intl.NumberFormat().format(element.TotalConfirmed)}</td>
-  //   <td>${new Intl.NumberFormat().format(element.TotalRecovered)}</td>
-  //   <td>${new Intl.NumberFormat().format(element.TotalDeaths)}</td>
-  // </tr>`;
-  //   }
-  // });
 };
 
 coronaWWW();
 let theDate = new Date();
-let days = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Friday", "Sat"];
+let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
 let months = [
   "January",
   "February",
@@ -117,11 +100,7 @@ let months = [
   "November",
   "December",
 ];
-console.log(
-  `${theDate.getUTCDate()},${days[theDate.getUTCDay()]} ${
-    months[theDate.getUTCMonth()]
-  }`
-);
+
 date.textContent = `${days[theDate.getUTCDay()]}, ${theDate.getUTCDate()} ${
   months[theDate.getUTCMonth()]
 }`;
